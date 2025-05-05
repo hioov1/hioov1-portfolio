@@ -27,7 +27,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section id="project" className="bg-transparent text-white relative min-h-screen overflow-hidden py-16 px-6 md:px-16 font-sans">
+    <section id="project" className="bg-transparent text-white relative min-h-screen overflow-hidden py-16 px-6 md:px-16 font-sans pt-24">
       <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: false, amount: 0.5 }} className="max-w-6xl mx-auto space-y-12">
         <div className="text-center space-y-6">
           <h2 className="text-3xl md:text-4xl font-bold font-poppins ">Projects</h2>
