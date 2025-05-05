@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import project1 from "/assets/img/project1.png";
-import project2 from "/assets/img/project2.png";
-import project3 from "/assets/img/project3.png";
+import project1 from "/img/project1.png";
+import project2 from "/img/project2.png";
+import project3 from "/img/project3.png";
 import { p } from "framer-motion/client";
 
 const projects = [
