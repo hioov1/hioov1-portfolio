@@ -1,21 +1,25 @@
 import { motion } from "framer-motion";
+import project1 from "/assets/img/project1.png";
+import project2 from "/assets/img/project2.png";
+import project3 from "/assets/img/project3.png";
+import { p } from "framer-motion/client";
 
 const projects = [
   {
     title: "First Portfolio Website",
-    image: "src/assets/img/project1.png",
+    image: project1,
     url: "https://github.com/hioov1/hio-port",
     tools: ["HTML", "CSS", "JavaScript", "Bootstrap", "AOS"],
   },
   {
     title: "Second Portfolio Website",
-    image: "src/assets/img/project2.png",
+    image: project2,
     url: "https://github.com/hioov1/ReactTailwind-portfolio",
     tools: ["Vite", "React", "TailwindCSS", "Framer-Motion"],
   },
   {
     title: "Third Portfolio Website",
-    image: "src/assets/img/project3.png",
+    image: project3,
     url: "https://github.com/hioov1/ReactTailwind-MyPortfolio",
     tools: ["Vite", "React", "TailwindCSS", "Framer-Motion"],
   },
