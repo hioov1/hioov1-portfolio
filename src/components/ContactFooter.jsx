@@ -153,7 +153,7 @@ const ContactAndFooter = () => {
       {/* Contact Section */}
       <div id="contact" ref={contactRef} className="relative min-h-screen bg-navy-dark overflow-hidden pt-16 pb-32 px-4 md:px-10">
         {/* Decorative circle on bottom right */}
-        <motion.div className="absolute bottom-0 right-0 w-96 h-96" animate={isContactInView ? "animate" : "initial"} variants={floatingObjectVariant}>
+        <motion.div className="absolute bottom-0 right-0 w-96 h-96 hidden md:block " animate={isContactInView ? "animate" : "initial"} variants={floatingObjectVariant}>
           <div className="relative w-full h-full">
             <motion.div
               className="absolute right-0 bottom-0 w-64 h-64 bg-gradient-to-tr from-blue-500/50 to-cyan-300 rounded-full blur-md"
