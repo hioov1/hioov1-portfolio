@@ -4,7 +4,6 @@ import Sidebar from "./components/SideBar";
 import HomePage from "./components/HomePage";
 import MobileNav from "./components/MobileNav";
 import AboutMe from "./components/About";
-
 import ContactAndFooter from "./components/ContactFooter";
 import SkillsSection from "./components/Skills";
 

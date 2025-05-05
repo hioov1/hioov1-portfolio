@@ -196,7 +196,7 @@ const ContactAndFooter = () => {
                 Get in touch
               </motion.h2>
 
-              <motion.p variants={itemVariants} className="text-gray-300 mb-8 leading-relaxed">
+              <motion.p variants={itemVariants} className="text-gray-300 mb-8 leading-relaxed font-sans">
                 I'm available to work. However, if you have another request or question, don't hesitate to contact me.{" "}
               </motion.p>
 
@@ -205,7 +205,7 @@ const ContactAndFooter = () => {
                   <motion.div variants={iconVariants} className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center">
                     <Mail size={18} className="text-gray-300" />
                   </motion.div>
-                  <a href="mailto:hioov1mail@gmail.com" className="text-white hover:underline hover:text-blue-600" target="_blank">
+                  <a href="mailto:hioov1mail@gmail.com" className="text-white hover:underline hover:text-blue-600 font-sans" target="_blank">
                     <span>hioov1mail@gmail.com</span>
                   </a>
                 </motion.div>
@@ -246,15 +246,21 @@ const ContactAndFooter = () => {
                 }}
               >
                 <motion.div variants={formFieldVariants}>
-                  <input type="text" name="name" placeholder="Name" className="w-full py-3 px-4 bg-navy-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500" required />
+                  <input type="text" name="name" placeholder="Name" className="w-full py-3 px-4 bg-navy-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 font-sans" required />
                 </motion.div>
 
                 <motion.div variants={formFieldVariants}>
-                  <input type="email" name="email" placeholder="Email Address" className="w-full py-3 px-4 bg-navy-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500" required />
+                  <input type="email" name="email" placeholder="Email Address" className="w-full py-3 px-4 bg-navy-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 font-sans" required />
                 </motion.div>
 
                 <motion.div variants={formFieldVariants}>
-                  <textarea name="message" placeholder="Your message" rows={5} className="w-full py-3 px-4 bg-navy-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 resize-none" required />
+                  <textarea
+                    name="message"
+                    placeholder="Your message"
+                    rows={5}
+                    className="w-full py-3 px-4 bg-navy-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 resize-none font-sans"
+                    required
+                  />
                 </motion.div>
 
                 <motion.div variants={formFieldVariants}>
@@ -292,7 +298,7 @@ const ContactAndFooter = () => {
           <motion.div className="h-px bg-gray-700 mb-6" initial={{ scaleX: 0 }} animate={isFooterInView ? { scaleX: 1 } : { scaleX: 0 }} transition={{ duration: 0.8, delay: 0.4 }} />
 
           {/* Terms & Privacy */}
-          <motion.div className="flex justify-center text-sm text-gray-400" initial={{ opacity: 0 }} animate={isFooterInView ? { opacity: 1 } : { opacity: 0 }} transition={{ duration: 0.6, delay: 0.6 }}>
+          <motion.div className="flex justify-center text-sm text-gray-400 font-sans" initial={{ opacity: 0 }} animate={isFooterInView ? { opacity: 1 } : { opacity: 0 }} transition={{ duration: 0.6, delay: 0.6 }}>
             <div className="space-x-2">
               <p>
                 © Copyright 2025, Created by{" "}

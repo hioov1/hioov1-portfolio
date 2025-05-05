@@ -3,6 +3,7 @@ import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 import OrbitAnimation from "./OrbitAnimation";
 import { Typewriter } from "react-simple-typewriter";
+import BlurText from "./BlurText";
 
 const HomePage = ({ isMobile }) => {
   const controls = useAnimation();
@@ -51,12 +52,12 @@ const HomePage = ({ isMobile }) => {
 
         <motion.h2 className={`${isMobile ? "text-2xl" : "text-6xl"} font-bold mb-4`} custom={1} initial="hidden" animate={controls} variants={textVariants}>
           <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-            <Typewriter words={["Front-End", "Web Developer", "Tech Enthusiast"]} loop={0} cursor cursorStyle="_" typeSpeed={100} deleteSpeed={50} delaySpeed={2000} />
+            <Typewriter words={["Front-End", "Web Developer", "Tech Enthusiast"]} loop={0} cursor cursorStyle="_" typeSpeed={80} deleteSpeed={50} delaySpeed={1500} />
           </span>
         </motion.h2>
 
         <motion.h3 className={`${isMobile ? "text-2xl" : "text-4xl"} font-medium mb-12`} custom={2} initial="hidden" animate={controls} variants={textVariants}>
-          <p className="text-sm md:text-base mt-4 text-gray-400 max-w-lg">Building the web with code and creativity.</p>
+          <BlurText text="Building the web with code and creativity." delay={150} animateBy="words" direction="top" className="text-sm md:text-base mt-4 text-gray-400 max-w-lg font-sans" repeat={true} />
         </motion.h3>
 
         <motion.div className={`flex ${isMobile ? "flex-col space-y-4" : "flex-row gap-6"}`} custom={3} initial="hidden" animate={controls} variants={textVariants}>

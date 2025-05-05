@@ -1,12 +1,47 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const MobileNav = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  // Scroll spy logic
+  useEffect(() => {
+    const sectionIds = ["home", "about", "project", "contact"];
+    const observers = [];
+
+    sectionIds.forEach((id) => {
+      const section = document.getElementById(id);
+      if (!section) return;
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setActiveSection(id);
+          }
+        },
+        {
+          root: null,
+          rootMargin: "0px 0px -70% 0px", // Deteksi saat bagian tengah viewport
+          threshold: 0.1,
+        }
+      );
+
+      observer.observe(section);
+      observers.push(observer);
+    });
+
+    return () => {
+      observers.forEach((observer) => observer.disconnect());
+    };
+  }, []);
+
+  // Link style helper
+  const linkStyle = (id) => `text-xl font-medium transition-colors ${activeSection === id ? "text-white" : "text-white/70"}`;
 
   return (
     <>
@@ -32,16 +67,16 @@ const MobileNav = () => {
         {isOpen && (
           <motion.div className="fixed inset-0 bg-navy-dark z-20 pt-24" initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.3 }}>
             <div className="flex flex-col items-center space-y-8 py-8">
-              <motion.a href="#" className="text-xl font-medium text-white" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => setIsOpen(false)}>
+              <motion.a href="#home" className={linkStyle("home")} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => setIsOpen(false)}>
                 Home
               </motion.a>
-              <motion.a href="#about" className="text-xl font-medium text-white/70" whileHover={{ scale: 1.05, color: "rgba(255,255,255,1)" }} whileTap={{ scale: 0.95 }} onClick={() => setIsOpen(false)}>
+              <motion.a href="#about" className={linkStyle("about")} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => setIsOpen(false)}>
                 About me
               </motion.a>
-              <motion.a href="#project" className="text-xl font-medium text-white/70" whileHover={{ scale: 1.05, color: "rgba(255,255,255,1)" }} whileTap={{ scale: 0.95 }} onClick={() => setIsOpen(false)}>
+              <motion.a href="#project" className={linkStyle("project")} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => setIsOpen(false)}>
                 Project
               </motion.a>
-              <motion.a href="#contact" className="text-xl font-medium text-white/70" whileHover={{ scale: 1.05, color: "rgba(255,255,255,1)" }} whileTap={{ scale: 0.95 }} onClick={() => setIsOpen(false)}>
+              <motion.a href="#contact" className={linkStyle("contact")} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => setIsOpen(false)}>
                 Contact
               </motion.a>
             </div>

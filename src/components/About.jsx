@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import BlurText from "./BlurText";
 
 const AboutMe = () => {
   const [ref, inView] = useInView({
@@ -67,7 +68,7 @@ const AboutMe = () => {
   };
 
   return (
-    <div id="about" ref={ref} className="relative min-h-screen bg-navy-dark overflow-hidden py-16 px-6 md:px-16 font-sans text-white">
+    <div id="about" ref={ref} className="relative min-h-screen bg-navy-dark overflow-hidden py-16 px-6 md:px-16 font-poppins text-white">
       {/* Background circle outline */}
       <motion.div className="absolute bottom-1/3 left-1/4 w-3/4 h-3/4 border-2 border-blue-400/20 rounded-full" initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 0.5 }} transition={{ duration: 2, ease: "easeOut" }} />
 
@@ -78,12 +79,16 @@ const AboutMe = () => {
             About Me
           </motion.h2>
 
-          <motion.p variants={itemVariants} className="text-lg md:text-xl mb-6 text-gray-300 leading-relaxed">
-            Hello, my name is Hioo, I am a front-end web developer based in Serang, Banten, Indonesia. I have a strong enthusiasm for continuously learning the latest developments in the world of programming, especially in the realm of
-            front-end development.
-          </motion.p>
+          <BlurText
+            text="Hello, my name is Hioo, I am a front-end web developer based in Serang, Banten, Indonesia. I have a strong enthusiasm for continuously learning the latest developments in the world of programming, especially in the realm of front-end development."
+            delay={70}
+            animateBy="words"
+            direction="top"
+            className="text-xl mb-8"
+            repeat={true}
+          />
 
-          <motion.p variants={itemVariants} className="text-gray-400 text-sm md:text-base">
+          <motion.p variants={itemVariants} className="text-gray-400 text-sm md:text-base font-sans">
             My passion lies in building the bridge between design and users through code. I'm Hioo, a front-end web developer enthusiastic about the digital world.
           </motion.p>
         </motion.div>

@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Projects from "./Projects";
+import CertificateSec from "./CertificateSec";
 
 // Daftar Skills dengan ikon
 const skillsData = [
@@ -125,6 +126,33 @@ const skillsData = [
   },
 ];
 
+const certificates = [
+  {
+    title: "Front-End Web Development",
+    issuer: "Dicoding",
+    date: "2025",
+    url: "#",
+  },
+  {
+    title: "JavaScript Algorithms & Data Structures",
+    issuer: "Dicoding",
+    date: "2025",
+    url: "#",
+  },
+  {
+    title: "Backend Development with Node.js",
+    issuer: "Dicoding",
+    date: "2025",
+    url: "#",
+  },
+  {
+    title: "Cloud and Gen AI Amazon Web Services",
+    issuer: "Dicoding",
+    date: "2025",
+    url: "#",
+  },
+];
+
 const SkillCard = ({ skill }) => {
   const [ref, inView] = useInView({
     triggerOnce: false,
@@ -169,7 +197,7 @@ const SkillCard = ({ skill }) => {
   );
 };
 
-export default function SkillsSection() {
+function SkillsSection() {
   const [ref, inView] = useInView({
     triggerOnce: false,
     threshold: 0.1,
@@ -200,7 +228,7 @@ export default function SkillsSection() {
 
   return (
     <section
-      className="relative min-h-screen bg-navy-dark  py-16 px-6 md:px-16 font-sans text-white overflow-hidden"
+      className="relative min-h-screen bg-navy-dark  py-16 px-6 md:px-16 text-white overflow-hidden"
       style={{
         background: "radial-gradient(ellipse at center, rgba(30, 58, 138, 1) 0%, rgba(7, 19, 59, 1) 100%)",
       }}
@@ -208,9 +236,9 @@ export default function SkillsSection() {
       <div className="container mx-auto px-4">
         <motion.div ref={ref} initial="hidden" animate={inView ? "visible" : "hidden"} variants={containerVariants} className="max-w-6xl mx-auto">
           <motion.div variants={titleVariants} className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 ">My Skills</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 font-poppins ">My Skills</h2>
             <div className="w-24 h-1 bg-blue-500 mx-auto mb-6"></div>
-            <p className="text-blue-300 max-w-2xl mx-auto">Here are the technologies and tools I work with to build modern, responsive web applications.</p>
+            <p className="text-blue-300 max-w-2xl mx-auto font-sans">Here are the technologies and tools I work with to build modern, responsive web applications.</p>
           </motion.div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
@@ -220,7 +248,14 @@ export default function SkillsSection() {
           </div>
         </motion.div>
       </div>
-      <Projects />
+      <div className="mt-16 mb-8">
+        <CertificateSec />
+      </div>
+      <div>
+        <Projects />
+      </div>
     </section>
   );
 }
+
+export default SkillsSection;
