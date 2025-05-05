@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-navy-dark font-sans text-white overflow-x-hidden;
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent;
+  background-image: linear-gradient(135deg, #aa44e5, #44d6e5);
+}
+
+.orbit-path {
+  border: 1px solid rgba(68, 214, 229, 0.2);
+  border-radius: 50%;
+}
+
+.glow-effect {
+  filter: blur(20px);
+}
+
+html {
+  scroll-behavior: smooth;
+}
