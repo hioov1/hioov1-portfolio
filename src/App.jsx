@@ -6,6 +6,7 @@ import MobileNav from "./components/MobileNav";
 import AboutMe from "./components/About";
 import ContactAndFooter from "./components/ContactFooter";
 import SkillsSection from "./components/Skills";
+import Projects from "./components/Projects";
 
 function App() {
   const [isMobile, setIsMobile] = useState(false);
@@ -37,6 +38,7 @@ function App() {
           <div className="relative z-10">
             <AboutMe />
             <SkillsSection />
+            <Projects />
 
             <ContactAndFooter />
           </div>

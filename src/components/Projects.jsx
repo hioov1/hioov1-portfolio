@@ -1,33 +1,34 @@
 import { motion } from "framer-motion";
-import project1 from "/img/project1.png";
+import salaryapp from "/img/salaryapp.png";
 import project2 from "/img/project2.png";
 import project3 from "/img/project3.png";
 import { p } from "framer-motion/client";
 
 const projects = [
   {
-    title: "First Portfolio Website",
-    image: project1,
-    url: "https://github.com/hioov1/hio-port",
-    tools: ["HTML", "CSS", "JavaScript", "Bootstrap", "AOS"],
-  },
-  {
-    title: "Second Portfolio Website",
+    title: "Portfolio Website",
     image: project2,
     url: "https://github.com/hioov1/ReactTailwind-portfolio",
     tools: ["Vite", "React", "TailwindCSS", "Framer-Motion"],
   },
   {
-    title: "Third Portfolio Website",
+    title: "Portfolio Website",
     image: project3,
     url: "https://github.com/hioov1/ReactTailwind-MyPortfolio",
     tools: ["Vite", "React", "TailwindCSS", "Framer-Motion"],
+  },
+  {
+    title: "Salary Management System",
+    image: salaryapp,
+    url: "https://github.com/hioov1/SalaryApp-doc",
+    tools: ["MongoDB", "Express", "React", "Node.js", "CRUD"],
   },
 ];
 
 const Projects = () => {
   return (
     <section id="project" className="bg-transparent text-white relative min-h-screen overflow-hidden py-16 px-6 md:px-16 font-poppins">
+      <motion.div className="absolute bottom-1/3 left-1/4 w-3/4 h-3/4 border-2 border-blue-400/20 rounded-full" initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 0.5 }} transition={{ duration: 2, ease: "easeOut" }} />
       <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: false, amount: 0.5 }} className="max-w-6xl mx-auto space-y-12">
         <div className="text-center space-y-6">
           <h2 className="text-3xl md:text-4xl font-bold font-poppins ">Projects</h2>

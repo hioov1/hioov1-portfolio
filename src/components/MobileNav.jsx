@@ -46,7 +46,7 @@ const MobileNav = () => {
   return (
     <>
       {/* Navbar */}
-      <nav className="fixed top-0 left-0 w-full flex justify-between items-center p-4 pl-6 pr-2 z-30 bg-navy/50 backdrop-blur-sm shadow-md">
+      <nav className="fixed top-0 left-0 w-full flex justify-between items-center p-2 pl-6 pr-2 z-30 bg-navy/50 backdrop-blur-sm shadow-md">
         <motion.div className="flex justify-center" initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
           <div className="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-br from-purple-accent to-cyan-accent p-[2px]">
             <div className="w-full h-full rounded-full bg-navy flex items-center justify-center">
@@ -71,7 +71,7 @@ const MobileNav = () => {
                 Home
               </motion.a>
               <motion.a href="#about" className={linkStyle("about")} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => setIsOpen(false)}>
-                About me
+                About
               </motion.a>
               <motion.a href="#project" className={linkStyle("project")} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => setIsOpen(false)}>
                 Project
