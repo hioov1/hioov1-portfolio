@@ -75,6 +75,11 @@ const skillsData = [
     icon: <img src="./icons/git.svg" alt="Git" className="w-8 h-8" />,
     color: "text-blue-600",
   },
+  {
+    name: "AWS",
+    icon: <img src="./icons/aws.svg" alt="aws" className="w-8 h-8" />,
+    color: "text-blue-600",
+  },
 ];
 
 const SkillCard = ({ skill }) => {
