@@ -68,7 +68,11 @@ const AboutMe = () => {
   };
 
   return (
+<<<<<<< HEAD
     <div id="about" ref={ref} className="relative min-h-screen bg-navy-dark overflow-hidden py-16 px-6 md:px-16 font-poppins text-white">
+=======
+    <div id="about" ref={ref} className="relative min-h-screen bg-navy-dark overflow-hidden py-16 px-6 md:px-16 pt-24 font-sans text-white">
+>>>>>>> 1d860c301509bd6456ea2fb63dcb85bf6fae7e8b
       {/* Background circle outline */}
       <motion.div className="absolute bottom-1/3 left-1/4 w-3/4 h-3/4 border-2 border-blue-400/20 rounded-full" initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 0.5 }} transition={{ duration: 2, ease: "easeOut" }} />
 
