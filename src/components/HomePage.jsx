@@ -52,7 +52,7 @@ const HomePage = ({ isMobile }) => {
 
         <motion.h2 className={`${isMobile ? "text-2xl" : "text-6xl"} font-bold mb-4`} custom={1} initial="hidden" animate={controls} variants={textVariants}>
           <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-            <Typewriter words={["Front-End", "Web Developer", "Tech Enthusiast"]} loop={0} cursor cursorStyle="_" typeSpeed={80} deleteSpeed={50} delaySpeed={1500} />
+            <Typewriter words={["Web Developer", "Tech Enthusiast"]} loop={0} cursor cursorStyle="_" typeSpeed={80} deleteSpeed={50} delaySpeed={1500} />
           </span>
         </motion.h2>
 
