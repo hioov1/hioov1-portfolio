@@ -80,7 +80,7 @@ const AboutMe = () => {
           </motion.h2>
 
           <BlurText
-            text="Hello, my name is Hioo, I am a front-end web developer based in Serang, Banten, Indonesia. I have a strong enthusiasm for continuously learning the latest developments in the world of programming, especially in the realm of front-end development."
+            text="Hello, my name is Hioo, I am a Junior Web Developer based in Serang, Banten, Indonesia. I have a strong enthusiasm for continuously learning the latest developments in the world of programming, especially in the realm of front-end development."
             delay={70}
             animateBy="words"
             direction="top"
