@@ -1,11 +1,10 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import BlurText from "./BlurText";
 
 const AboutMe = () => {
   const [ref, inView] = useInView({
-    triggerOnce: false, // animasi akan dipicu setiap kali terlihat
+    triggerOnce: false, 
     threshold: 0.2,
   });
 
@@ -80,7 +79,7 @@ const AboutMe = () => {
           </motion.h2>
 
           <BlurText
-            text="Hello, my name is Hioo, I am a Junior Web Developer based in Serang, Banten, Indonesia. I have a strong enthusiasm for continuously learning the latest developments in the world of programming, especially in the realm of front-end development."
+            text="Hello, my name is Hioo, I am a Junior Web Developer based in Serang, Banten, Indonesia. I have a strong enthusiasm for continuously learning the latest developments in the world of programming, especially in the realm of web development."
             delay={70}
             animateBy="words"
             direction="top"
@@ -89,7 +88,7 @@ const AboutMe = () => {
           />
 
           <motion.p variants={itemVariants} className="text-gray-400 text-sm md:text-base font-sans">
-            My passion lies in building the bridge between design and users through code. I'm Hioo, a front-end web developer enthusiastic about the digital world.
+            My passion lies in building the bridge between design and users through code. I'm Hioo, a junior web developer enthusiastic about the digital world.
           </motion.p>
         </motion.div>
 

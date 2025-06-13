@@ -1,187 +1,119 @@
-import React from "react";
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import CertificateSec from "./CertificateSec";
 
-// Daftar Skills dengan ikon
-const skillsData = [
+const certificates = [
   {
-    name: "HTML",
-    icon: <img src="./icons/html.svg" alt="HTML" className="w-8 h-8" />,
-    color: "text-orange-500",
+    title: "Front-End Web Development",
+    issuer: "Dicoding, powered by DBS Foundation",
+    date: "2025",
+    url: "https://drive.google.com/file/d/1Ap2Uslvpx4cR5wkk1u7fol32yHy_YkHe/view?usp=sharing",
   },
   {
-    name: "CSS",
-    icon: <img src="./icons/css.svg" alt="CSS" className="w-8 h-8" />,
-    color: "text-blue-500",
+    title: "JavaScript Algorithms & Data Structures",
+    issuer: "Dicoding, powered by Amazon Web Services",
+    date: "2025",
+    url: "https://drive.google.com/file/d/1ZcFJCRfXUP2WdZvpZo3Vy4YhKpuO14yd/view?usp=sharing",
   },
   {
-    name: "Bootstrap",
-    icon: <img src="./icons/bootstrap.svg" alt="Bootstrap" className="w-8 h-8" />,
-    color: "text-purple-600",
+    title: "Backend Development with NodeJS",
+    issuer: "Dicoding, powered by Amazon Web Services",
+    date: "2025",
+    url: "https://drive.google.com/file/d/11Y9_DqHQQjf7tZ2i9WbpEF9u5kLVufMG/view?usp=sharing",
   },
   {
-    name: "TailwindCSS",
-    icon: <img src="./icons/tailwindcss.svg" alt="TailwindCSS" className="w-8 h-8" />,
-    color: "text-teal-500",
+    title: "Cloud and Gen AI Amazon Web Services",
+    issuer: "Dicoding, powered by Amazon Web Services",
+    date: "2025",
+    url: "#",
   },
   {
-    name: "JavaScript",
-    icon: <img src="./icons/javascript.svg" alt="JavaScript" className="w-8 h-8" />,
-    color: "text-yellow-500",
+    title: "Python Programming",
+    issuer: "Dicoding, powered by DBS Foundation",
+    date: "2025",
+    url: "https://drive.google.com/file/d/1aGL0aWfMJmbALlCP5-KsfoDsoYIjdGKd/view?usp=sharing",
   },
   {
-    name: "TypeScript",
-    icon: <img src="./icons/typescript.svg" alt="TypeScript" className="w-8 h-8" />,
-    color: "text-blue-600",
-  },
-  {
-    name: "Python",
-    icon: <img src="./icons/python.svg" alt="Python" className="w-8 h-8" />,
-    color: "text-blue-600",
-  },
-  {
-    name: "React",
-    icon: <img src="./icons/react.svg" alt="React" className="w-8 h-8" />,
-    color: "text-blue-600",
-  },
-  {
-    name: "Next",
-    icon: <img src="./icons/nextjs.svg" alt="Next" className="w-8 h-8" />,
-    color: "text-blue-600",
-  },
-  {
-    name: "Node js",
-    icon: <img src="./icons/nodejs.svg" alt="Node" className="w-8 h-8" />,
-    color: "text-blue-600",
-  },
-  {
-    name: "Express",
-    icon: <img src="./icons/express.svg" alt="Express" className="w-8 h-8" />,
-    color: "text-blue-600",
-  },
-  {
-    name: "MongoDB",
-    icon: <img src="./icons/mongodb.svg" alt="MongoDB" className="w-8 h-8" />,
-    color: "text-blue-600",
-  },
-  {
-    name: "Postman",
-    icon: <img src="./icons/postman.svg" alt="Postman" className="w-8 h-8" />,
-    color: "text-blue-600",
-  },
-  {
-    name: "Git",
-    icon: <img src="./icons/git.svg" alt="Git" className="w-8 h-8" />,
-    color: "text-blue-600",
-  },
-  {
-    name: "AWS",
-    icon: <img src="./icons/aws.svg" alt="aws" className="w-8 h-8" />,
-    color: "text-blue-600",
+    title: "Machine Learning",
+    issuer: "Dicoding, powered by DBS Foundation",
+    date: "2025",
+    url: "#",
   },
 ];
 
-const SkillCard = ({ skill }) => {
-  const [ref, inView] = useInView({
-    triggerOnce: false,
-    threshold: 0.1,
-  });
-
-  const cardVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: { duration: 0.5 },
-    },
-  };
-
-  const iconVariants = {
-    hover: {
-      scale: 1.2,
-      rotate: [0, 10, -10, 0],
-      transition: {
-        type: "spring",
-        stiffness: 300,
-        damping: 10,
-        duration: 0.6,
-      },
-    },
-  };
-
-  return (
-    <motion.div
-      ref={ref}
-      initial="hidden"
-      animate={inView ? "visible" : "hidden"}
-      variants={cardVariants}
-      className="flex flex-col items-center p-4 bg-blue-900 bg-opacity-20 rounded-lg shadow-lg backdrop-blur-sm transition-all duration-300 hover:shadow-xl hover:bg-blue-800 hover:bg-opacity-30"
-    >
-      <motion.div whileHover="hover" className={`${skill.color} mb-3`}>
-        <motion.div variants={iconVariants}>{skill.icon}</motion.div>
-      </motion.div>
-      <h3 className="text-lg font-medium text-white">{skill.name}</h3>
-    </motion.div>
-  );
+// Animation variants
+const containerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.15 } },
+};
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
-function SkillsSection() {
-  const [ref, inView] = useInView({
-    triggerOnce: false,
-    threshold: 0.1,
-  });
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2,
-      },
-    },
-  };
-
-  const titleVariants = {
-    hidden: { y: -20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.7,
-        ease: "easeOut",
-      },
-    },
-  };
-
+export default function CertificateSec() {
   return (
-    <section
-      className="relative min-h-screen bg-navy-dark  py-16 px-6 md:px-16 text-white overflow-hidden"
-      style={{
-        background: "radial-gradient(ellipse at center, rgba(30, 58, 138, 1) 0%, rgba(7, 19, 59, 1) 100%)",
-      }}
-    >
-      <div className="container mx-auto px-4">
-        <motion.div ref={ref} initial="hidden" animate={inView ? "visible" : "hidden"} variants={containerVariants} className="max-w-6xl mx-auto">
-          <motion.div variants={titleVariants} className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 font-poppins ">My Skills</h2>
-            <div className="w-24 h-1 bg-blue-500 mx-auto mb-6"></div>
-            <p className="text-blue-300 max-w-2xl mx-auto font-sans">Here are the technologies and tools I work with to build modern, responsive web applications.</p>
-          </motion.div>
+    <section id="certificates" className="py-16 px-6 md:px-16 bg-gray-900">
+      {/* Header */}
+      <motion.div
+        className="text-center mb-12"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <h2 className="text-3xl md:text-4xl font-bold text-white font-poppins">
+          Bootcamp Certifications
+        </h2>
+        <div className="mt-2 w-20 h-1 bg-blue-500 mx-auto"></div>
+        <p className="mt-4 text-gray-300 max-w-2xl mx-auto text-sm md:text-base">
+          I'm dedicated to continuous learning. These certifications showcase my commitment to staying current in the fast-paced world of IT.
+        </p>
+      </motion.div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-            {skillsData.map((skill, index) => (
-              <SkillCard key={index} skill={skill} />
-            ))}
-          </div>
-        </motion.div>
-      </div>
-      <div className="py-4 mt-16">
-        <CertificateSec />
-      </div>
+      {/* Certificate cards grid */}
+      <motion.div
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.3 }}
+      >
+        {certificates.map((cert, idx) => (
+          <motion.a
+            key={idx}
+            href={cert.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            variants={cardVariants}
+            className="block bg-gradient-to-br from-gray-800 to-gray-700 rounded-2xl p-6 shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300"
+          >
+            <div className="flex items-center mb-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6 text-blue-400 mr-2"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 12l2 2l4 -4m2 8H7a2 2 0 0 1-2 -2V6a2 2 0 0 1 2 -2h5l2 2h5a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2z"
+                />
+              </svg>
+              <h3 className="text-lg font-semibold text-white">{cert.title}</h3>
+            </div>
+            <p className="text-gray-400 text-sm mb-2">
+              <span className="font-medium">Issuer:</span> {cert.issuer}
+            </p>
+            <p className="text-gray-400 text-sm mb-4">
+              <span className="font-medium">Year:</span> {cert.date}
+            </p>
+            <button className="mt-auto inline-flex items-center px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors duration-200 text-sm">
+              View Certificate
+n            </button>
+          </motion.a>
+        ))}
+      </motion.div>
     </section>
   );
 }
-
-export default SkillsSection;
